@@ -202,24 +202,25 @@
   <!-- Scroll to Top Button -->
   <button class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
 
-  <script>
+ <script>
     // Scroll to Top Button
     const scrollToTopBtn = document.querySelector('.scroll-to-top');
-    
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        scrollToTopBtn.classList.add('active');
-      } else {
-        scrollToTopBtn.classList.remove('active');
-      }
-    });
-    
-    scrollToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    if (scrollToTopBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          scrollToTopBtn.classList.add('active');
+        } else {
+          scrollToTopBtn.classList.remove('active');
+        }
       });
-    });
+      
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
     
     // Form submission
     const contactForm = document.querySelector('.contact-form');
@@ -257,45 +258,48 @@
     // Navbar background change on scroll
     window.addEventListener('scroll', () => {
       const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-      } else {
-        navbar.style.boxShadow = 'none';
+      if (navbar) {
+        if (window.scrollY > 50) {
+          navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        } else {
+          navbar.style.boxShadow = 'none';
+        }
       }
     });
   
-   
-const typedText = document.getElementById("auto-type");
-const words = ["Coder ", "Developer ", "QA Engineer ", "Tech Enthusiast "];
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let delay = 100;
+    // Auto-typing effect
+    const typedText = document.getElementById("auto-type");
+    if (typedText) {
+      const words = ["Coder ", "Developer ", "QA Engineer ", "Tech Enthusiast "];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+      let delay = 100;
 
-function type() {
-  const currentWord = words[wordIndex];
-  if (isDeleting) {
-    typedText.textContent = currentWord.substring(0, charIndex--);
-  } else {
-    typedText.textContent = currentWord.substring(0, charIndex++);
-  }
+      function type() {
+        const currentWord = words[wordIndex];
+        if (isDeleting) {
+          typedText.textContent = currentWord.substring(0, charIndex--);
+        } else {
+          typedText.textContent = currentWord.substring(0, charIndex++);
+        }
 
-  if (!isDeleting && charIndex === currentWord.length) {
-    isDeleting = true;
-    delay = 1000;
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    wordIndex = (wordIndex + 1) % words.length;
-    delay = 200;
-  } else {
-    delay = isDeleting ? 50 : 100;
-  }
+        if (!isDeleting && charIndex === currentWord.length) {
+          isDeleting = true;
+          delay = 1000;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          delay = 200;
+        } else {
+          delay = isDeleting ? 50 : 100;
+        }
 
-  setTimeout(type, delay);
-}
+        setTimeout(type, delay);
+      }
 
-document.addEventListener("DOMContentLoaded", type);
-
-  </script>
+      document.addEventListener("DOMContentLoaded", type);
+    }
+</script>
 </body>
 </html>
