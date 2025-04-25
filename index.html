@@ -257,37 +257,36 @@
  
     }
    
-  const typedText = document.getElementById("auto-type");
-  const words = ["Coder ", "Developer ", "QA Engineer ", "Tech Enthusiast "];
-  let wordIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
-  let delay = 100;
+const typedText = document.getElementById("auto-type");
+const words = ["Coder ", "Developer ", "QA Engineer ", "Tech Enthusiast "];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let delay = 100;
 
-  function type() {
-    const currentWord = words[wordIndex];
-    if (isDeleting) {
-      typedText.textContent = currentWord.substring(0, charIndex--);
-    } else {
-      typedText.textContent = currentWord.substring(0, charIndex++);
-    }
-
-    if (!isDeleting && charIndex === currentWord.length) {
-      isDeleting = true;
-      delay = 1000;
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      wordIndex = (wordIndex + 1) % words.length;
-      delay = 200;
-    } else {
-      delay = isDeleting ? 50 : 100;
-    }
-
-    setTimeout(type, delay);
+function type() {
+  const currentWord = words[wordIndex];
+  if (isDeleting) {
+    typedText.textContent = currentWord.substring(0, charIndex--);
+  } else {
+    typedText.textContent = currentWord.substring(0, charIndex++);
   }
 
-  document.addEventListener("DOMContentLoaded", type);
+  if (!isDeleting && charIndex === currentWord.length) {
+    isDeleting = true;
+    delay = 1000;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+    delay = 200;
+  } else {
+    delay = isDeleting ? 50 : 100;
+  }
 
+  setTimeout(type, delay);
+}
+
+document.addEventListener("DOMContentLoaded", type);
 
   </script>
 </body>
