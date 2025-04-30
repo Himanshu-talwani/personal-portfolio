@@ -176,32 +176,32 @@
   
   .skill-card {
     background: white;
-    border-radius: 10px;
-    padding: 25px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    border-left: 4px solid var(--primary-color);
+    border-radius: 30px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgb(94 255 0 / 21%);
+    transition: all 0.5s ease;
+    border-left: 4px solid #07ba07;
   }
   
   .skill-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-40px);
+    box-shadow: 0 15px 30px rgb(0 0 0);
+    color: blue;
   }
   
   .skill-card i {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
+    font-size: 3rem;
+    margin-bottom: 10px;
   }
   
   .skill-card h3 {
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
   }
   
   .skill-card p {
-    color: #666;
+    color: #000000;
   }
   
   /* Projects Section */
@@ -209,14 +209,14 @@
     border: none;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgb(14 0 104 / 5%);
     transition: all 0.3s ease;
     margin-bottom: 30px;
   }
   
   .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 30px rgb(6 27 62);
   }
   
   .project-card img {
@@ -225,23 +225,24 @@
   }
   
   .project-card .card-body {
-    padding: 25px;
+    padding: 2px;
   }
   
   .project-card .card-title {
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-weight: 800;
+    margin-bottom: 30px;
   }
   
   .project-card .card-text {
     color: #666;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
   
   .project-links a {
-    margin-right: 10px;
-    color: var(--primary-color);
-    font-weight: 500;
+    margin-right: 50px;
+    color: blue;
+    text-decoration: none;
+    font-weight: 700;
   }
   
   .project-links a:hover {
@@ -255,19 +256,19 @@
   }
   
   .contact-info {
-    margin-bottom: 30px;
+    margin-bottom: 80px;
   }
   
   .contact-info i {
-    font-size: 1.5rem;
-    margin-right: 15px;
+    font-size: 1.8rem;
+    margin-right: 20px;
     color: var(--accent-color);
   }
   
   .contact-form .form-control {
     background-color: rgba(255, 255, 255, 0.1);
     border: none;
-    color: white;
+    color: #fcfcfc;
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -304,29 +305,29 @@
   .social-links a {
     color: white;
     font-size: 1.5rem;
-    margin: 0 10px;
-    transition: all 0.3s ease;
+    margin: 0 50px;
+    transition: all 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
   
   .social-links a:hover {
     color: var(--accent-color);
-    transform: translateY(-3px);
+    transform: translateY(10px);
   }
   
   /* Scroll to Top Button */
   .scroll-to-top {
     position: fixed;
-    bottom: 30px;
+    bottom: 60px;
     right: 30px;
     background-color: var(--accent-color);
     color: white;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
@@ -341,7 +342,7 @@
   }
   
   .scroll-to-top:hover {
-    background-color: #e5533d;
+    background-color: #0309ae;
     transform: translateY(-3px);
   }
   
