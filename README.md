@@ -1,2 +1,2 @@
 # personal-portfolio
-html,css, js , bootstrap
+I will add a Dark Mode toggle and improve the Contact Form later.
