@@ -58,7 +58,12 @@
   a{
     font-size: large;
   }
-  
+
+.toggle-container {
+      padding: 5px 10px;
+      border-radius: 20px;
+      cursor: pointer;
+}
   
 
 /* For smaller screens */
@@ -80,7 +85,7 @@
 }
 
 
-  /* Header/Hero Section */
+  /* Header Section */
   header {
     background: #0707f7;
     color: white;
