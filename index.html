@@ -60,33 +60,78 @@
     </div>
   </header>
 
-  <!-- About Section -->
-  <section id="about" class="container">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <p>Hello! I'm Himanshu Talwani, a recent BCA graduate with a passion for Full Stack Development, Data Analysis, and Quality Assurance. I enjoy building user-friendly web applications, analyzing data for insights, and ensuring software quality through effective testing strategies.</p>
+  <!-- About/Certification Section -->
+<section id="ht-about-section" class="ht-container">
+  <div class="ht-section-header">
+    <h2 class="ht-section-title">About Me</h2>
+    <div class="ht-toggle-buttons">
+      <button class="ht-toggle-btn ht-active" data-ht-target="ht-about-panel">About</button>
+      <button class="ht-toggle-btn" data-ht-target="ht-certification-panel">Certifications</button>
+    </div>
+  </div>
+  
+  <div class="ht-panel-container">
+    <!-- About Panel -->
+    <div id="ht-about-panel" class="ht-panel-content ht-active">
+      <div class="ht-about-content">
+        <div class="ht-about-text">
+          <p>Hello! I'm Himanshu Talwani, a recent BCA graduate with a passion for Full Stack Development, Data Analysis, and Quality Assurance. I enjoy building user-friendly web applications, analyzing data for insights, and ensuring software quality through effective testing strategies.</p>
 
-        <p>My tech journey began during my BCA, where I built a strong foundation in programming, databases, and software development. Since then, I’ve been sharpening my skills across the full development cycle—from designing responsive front-end interfaces to managing back-end systems and applying modern QA practices.</p>
-        
-        <p>Driven by curiosity and a love for continuous learning, I’m always exploring new tools, solving real-world problems, and contributing to high-impact projects.</p>
-     <!-- Education Section -->
-     <h2>Education</h2>
-<h3>Bachelor of Computer Applications (BCA)</h3>
-<p><strong>Lokmanya College</strong>, affiliated with Gujarat University, Ahmedabad (2022–2025)</p>
-<ul>
-  <li><strong>Final Year Result:</strong> 74.79% – First Class</li>
-  <li><strong>Overall Aggregate:</strong> 65.46%</li>
-<!--   <li><strong>Grade:</strong> B (Good)</li>
-  <li><strong>Project:</strong> Web-Based Software Development Project</li> -->
-</ul>
-      </div>
-      <div class="about-img">
-        <img src="himanshu.jpg" alt="About Himanshu Talwani">
-        
+          <p>My tech journey began during my BCA, where I built a strong foundation in programming, databases, and software development. Since then, I've been sharpening my skills across the full development cycle—from designing responsive front-end interfaces to managing back-end systems and applying modern QA practices.</p>
+          
+          <p>Driven by curiosity and a love for continuous learning, I'm always exploring new tools, solving real-world problems, and contributing to high-impact projects.</p>
+          
+          <!-- Education Section -->
+          <h3 class="ht-education-title">Education</h3>
+          <div class="ht-education-item">
+            <h4>Bachelor of Computer Applications (BCA)</h4>
+            <p><strong>Lokmanya College</strong>, affiliated with Gujarat University, Ahmedabad (2022–2025)</p>
+            <ul class="ht-education-details">
+              <li><strong>Final Year Result:</strong> 74.79% – First Class</li>
+              <li><strong>Overall Aggregate:</strong> 65.46%</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ht-about-img">
+          <img src="himanshu.jpg" alt="About Himanshu Talwani" class="ht-profile-img">
+        </div>
       </div>
     </div>
-  </section>
+    
+    <!-- Certification Panel -->
+    <div id="ht-certification-panel" class="ht-panel-content">
+      <div class="ht-certifications-grid">
+        <div class="ht-certification-card">
+          <h3 class="ht-cert-title">INTRODUCTION TO PHP</h3>
+          <p class="ht-cert-issuer"><strong>Issuer:</strong> Simplilearn</p>
+          <p class="ht-cert-date"><strong>Date:</strong> 2025</p>
+<!--           <p class="ht-cert-desc">Completed comprehensive training in php development</p> -->
+        </div>
+        
+<!--         <div class="ht-certification-card">
+          <h3 class="ht-cert-title">Data Analysis Fundamentals</h3>
+          <p class="ht-cert-issuer"><strong>Issuer:</strong> Google Data Analytics</p>
+          <p class="ht-cert-date"><strong>Date:</strong> 2023</p>
+          <p class="ht-cert-desc">Learned data cleaning, visualization, and analysis techniques</p>
+        </div> -->
+        
+<!--         <div class="ht-certification-card">
+          <h3 class="ht-cert-title">Quality Assurance Engineering</h3>
+          <p class="ht-cert-issuer"><strong>Issuer:</strong> Test Automation University</p>
+          <p class="ht-cert-date"><strong>Date:</strong> 2023</p>
+          <p class="ht-cert-desc">Mastered automated testing tools and methodologies</p>
+        </div>
+         -->
+<!--         <div class="ht-certification-card">
+          <h3 class="ht-cert-title">JavaScript Algorithms and Data Structures</h3>
+          <p class="ht-cert-issuer"><strong>Issuer:</strong> freeCodeCamp</p>
+          <p class="ht-cert-date"><strong>Date:</strong> 2022</p>
+          <p class="ht-cert-desc">Certified in fundamental programming concepts</p>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Skills Section -->
   <section id="skills">
@@ -350,6 +395,29 @@ toggle.addEventListener("change", () => {
     localStorage.setItem("mode", "light");
   }
 });
+    document.addEventListener('DOMContentLoaded', function() {
+    const toggleButtons = document.querySelectorAll('.ht-toggle-btn');
+    
+    toggleButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Remove active class from all buttons and panels
+        document.querySelectorAll('.ht-toggle-btn').forEach(btn => btn.classList.remove('ht-active'));
+        document.querySelectorAll('.ht-panel-content').forEach(panel => panel.classList.remove('ht-active'));
+        
+        // Add active class to clicked button
+        this.classList.add('ht-active');
+        
+        // Show corresponding panel
+        const targetPanel = document.getElementById(this.getAttribute('data-ht-target'));
+        targetPanel.classList.add('ht-active');
+        
+        // Update section title
+        const sectionTitle = document.querySelector('.ht-section-title');
+        sectionTitle.textContent = this.textContent + (this.textContent === 'About' ? ' Me' : '');
+      });
+    });
+  });
+
 </script>
 </body>
 </html>
